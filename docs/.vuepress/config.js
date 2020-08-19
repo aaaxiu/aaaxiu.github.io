@@ -39,7 +39,7 @@ module.exports = {
       { text: 'Home', link: '/'},
       { text: '博文', link: '/pages/blog/javascript/Webpack配置指南' }, // 内部链接 以docs为根目录
       { text: '代码块', link: '/pages/code/一行代码实现时间戳转时分秒'},
-      // { text: '读《JS高程》', link: '/pages/js-programme/Javascript简介.md' },
+      { text: '读书', link: '/pages/book/js-programme/Javascript简介' },
       { text: 'GitHub', link: 'https://github.com/imlinhe'}  
     ],
     sidebar: {
@@ -123,10 +123,16 @@ module.exports = {
           ]
         }
       ],
-      // '/pages/js-programme/': [
-      //   ['javascript简介', 'javascript简介'],
-      //   ['在HTML中使用javascript', '在HTML中使用javascript']
-      // ]
+      '/pages/book/': [
+        {
+          title: 'JS高级程序设计',   // 一级菜单名称
+          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+          children: [
+            ['js-programme/javascript简介', 'javascript简介'],
+            ['js-programme/在HTML中使用javascript', '在HTML中使用javascript']
+          ]
+        },
+      ]
       //...可添加多个不同的侧边栏，不同页面会根据路径显示不同的侧边栏
     }
   }

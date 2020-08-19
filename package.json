@@ -5,6 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
+    "serve": "npm run dev",
+    "start": "npm run dev",
     "build": "vuepress build docs",
     "deploy": "bash deploy.sh"
   },
