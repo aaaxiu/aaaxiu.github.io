@@ -1,6 +1,6 @@
-# 在HTML中使用Javascript
+# 在 HTML 中使用 Javascript
 
-## 2.1 <script> 元素
+### `script` 元素
 
 向 HTML 页面中插入 JavaScript 的主要方法，就是使用 `<script>` 元素。HTML 4.01 为 `script` 定义了下面 6 个属性：
 
@@ -17,7 +17,7 @@
 
 如果要通过 `<script>` 元素来包含外部 JavaScript 文件，那么 src 属性就是必须的。通过 `<script>` 元素的 src 属性还可以包含来自外部域的 JavaScript 文件。无论如何包含代码，只要不存在 defer 和 async 属性，浏览器都会按照 `<script>` 元素在页面中出现的先后顺序对它们依次进行解析。
 
-## 2.2 
+### 嵌入代码与外部文件
 
 
 

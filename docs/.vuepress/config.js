@@ -135,8 +135,8 @@ module.exports = {
           title: 'JS高级程序设计',   // 一级菜单名称
           collapsable: false, // false为默认展开菜单, 默认值true是折叠,
           children: [
-            ['js-programme/01-Javascript简介', '01-Javascript简介'],
-            ['js-programme/02-在HTML中使用Javascript', '02-在HTML中使用Javascript']
+            ['js-programme/01-JavaScript简介', '01-JavaScript简介'],
+            ['js-programme/02-在HTML中使用JavaScript', '02-在HTML中使用JavaScript']
           ]
         },
       ]
