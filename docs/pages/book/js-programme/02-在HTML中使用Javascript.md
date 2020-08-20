@@ -1,4 +1,4 @@
-# 在HTML中使用javascript
+# 在HTML中使用Javascript
 
 更新中。。。
 

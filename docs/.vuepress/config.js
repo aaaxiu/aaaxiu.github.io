@@ -38,8 +38,8 @@ module.exports = {
     nav:[
       { text: 'Home', link: '/'},
       { text: '博文', link: '/pages/blog/javascript/Webpack配置指南' }, // 内部链接 以docs为根目录
-      { text: '代码块', link: '/pages/code/一行代码实现时间戳转时分秒'},
-      { text: '读书', link: '/pages/book/js-programme/Javascript简介' },
+      { text: '摘要', link: '/pages/abstract/code/一行代码实现时间戳转时分秒'},
+      { text: '读书', link: '/pages/book/js-programme/01-Javascript简介' },
       { text: 'GitHub', link: 'https://github.com/imlinhe'}  
     ],
     sidebar: {
@@ -104,22 +104,28 @@ module.exports = {
           ]
         }
       ],
-      '/pages/code/': [
+      '/pages/abstract/': [
         { 
-          title: '代码块', 
+          title: '代码摘要', 
           collapsable: false,
           children: [
-            ['一行代码实现时间戳转时分秒', '一行代码实现时间戳转时分秒'],
-            ['饿了么Dialog组件二次封装', '饿了么Dialog组件二次封装'],
-            ['椭圆运动轨迹', '椭圆运动轨迹'],
-            ['常用scss函数表', '常用scss函数表'],
-            ['公共方法汇总', '公共方法汇总'],
-            ['浮点数运算误差', '浮点数运算误差'],
-            ['isEqual', 'isEqual'],
-            ['ESLint配置项', 'ESLint配置项'],
-            ['电话号码分段', '电话号码分段'],
-            ['Canvas签名', 'Canvas签名'],
-            ['切换镜像', '切换镜像'],
+            ['code/一行代码实现时间戳转时分秒', '一行代码实现时间戳转时分秒'],
+            ['code/饿了么Dialog组件二次封装', '饿了么Dialog组件二次封装'],
+            ['code/椭圆运动轨迹', '椭圆运动轨迹'],
+            ['code/常用scss函数表', '常用scss函数表'],
+            ['code/公共方法汇总', '公共方法汇总'],
+            ['code/浮点数运算误差', '浮点数运算误差'],
+            ['code/isEqual', 'isEqual'],
+            ['code/ESLint配置项', 'ESLint配置项'],
+            ['code/电话号码分段', '电话号码分段'],
+            ['code/Canvas签名', 'Canvas签名']
+          ]
+        },
+        {
+          title: '其他',
+          collapsable: false,
+          children: [
+            ['others/切换镜像源', '切换镜像源']
           ]
         }
       ],
@@ -128,8 +134,8 @@ module.exports = {
           title: 'JS高级程序设计',   // 一级菜单名称
           collapsable: false, // false为默认展开菜单, 默认值true是折叠,
           children: [
-            ['js-programme/javascript简介', 'javascript简介'],
-            ['js-programme/在HTML中使用javascript', '在HTML中使用javascript']
+            ['js-programme/01-Javascript简介', '01-Javascript简介'],
+            ['js-programme/02-在HTML中使用Javascript', '02-在HTML中使用Javascript']
           ]
         },
       ]
