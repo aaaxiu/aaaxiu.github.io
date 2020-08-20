@@ -125,7 +125,8 @@ module.exports = {
           title: '其他',
           collapsable: false,
           children: [
-            ['others/切换镜像源', '切换镜像源']
+            ['others/切换镜像源', '切换镜像源'],
+            ['others/Cmder右键启动', 'Cmder右键启动']
           ]
         }
       ],
