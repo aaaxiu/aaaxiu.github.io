@@ -8,44 +8,66 @@
 //   -ms-filter grayscale(100%)
 //   -o-filter grayscale(100%)
 
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: #fff;
-}
-
-/*定义滚动条轨道 内阴影+圆角*/
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
-  background-color: #fff;
-}
-
-/*定义滑块 内阴影+圆角*/
-::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
-  background: #cfcfcf;
-}
-
-// 渐变色标题
-.navbar .site-name {
-  background-image: -webkit-linear-gradient(left,
-   #22c1c3, #fdbb2d 25%, #22c1c3 50%, #fdbb2d 75%, #22c1c3);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-background-size: 200% 100%;
-  -webkit-animation: myGradientChange 4s infinite linear;
-  animation: myGradientChange 4s infinite linear;
-}
-@keyframes myGradientChange  {
-  0%{ background-position: 0 0;}
-  100% { background-position: -100% 0;}
-}
-
 .theme-container
-  // 限制主页图片大小
-  .home .hero img
-    max-height 230px
+  // 头部 navbar
+  .navbar {
+    /* 渐变色标题 */
+    .site-name {
+      background-image: -webkit-linear-gradient(left,
+      #3498db, #9b59b6 25%, #3498db 50%, #9b59b6 75%, #3498db);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-background-size: 200% 100%;
+      -webkit-animation: myGradientChange 4s infinite linear;
+      animation: myGradientChange 4s infinite linear;
+    }
+    @keyframes myGradientChange {
+      0%{ background-position: 0 0;}
+      100% { background-position: -100% 0;}
+    }
+  }
+  // ???
+  // .sidebar-mask {}
+  // 侧边栏
+  .sidebar {
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: #ecf0f1;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    &::-webkit-scrollbar-track {
+      background-color: #ecf0f1;
+    }
+    /*定义滑块 内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+      border-radius: 1px;
+      background: #95a5a6;
+    }
+  }
+  // 首页
+  .home {
+    .hero img {
+      max-height 230px  
+    }
+  }
+  // 内容页
+  .page {
+    h2 {
+      border none  
+    }
+    .custom-block {
+      &.tip {
+        border-color: #3498db;
+      }
+      &.warning {
+        border-color: #f1c40f;
+      }
+      &.danger {
+        border-color: #e74c3c;  
+      }
+    }
+  } 
+  
 
-h2
-  border none
