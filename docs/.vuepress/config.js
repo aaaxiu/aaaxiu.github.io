@@ -96,6 +96,7 @@ module.exports = {
             ['others/跨域解决方案', '跨域解决方案'],
             ['others/一道算法题', '一道算法题'],
             ['others/VSCode插件和配置', 'VSCode插件和配置'],
+            ['others/win软件安装备忘', 'win软件安装备忘'],
             ['others/彻底理解浏览器的缓存机制', '彻底理解浏览器的缓存机制'],
             ['others/在第三方页面调用微信接口', '在第三方页面调用微信接口'],
             ['others/移动端遮罩阻止滚动方案', '移动端遮罩阻止滚动方案'],
@@ -103,6 +104,16 @@ module.exports = {
             ['others/前端安全', '前端安全'],
           ]
         }
+      ],
+      '/pages/book/': [
+        {
+          title: 'JS高级程序设计',   // 一级菜单名称
+          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+          children: [
+            ['js-programme/01-JavaScript简介', '01-JavaScript简介'],
+            ['js-programme/02-在HTML中使用JavaScript', '02-在HTML中使用JavaScript']
+          ]
+        },
       ],
       '/pages/abstract/': [
         { 
@@ -127,19 +138,10 @@ module.exports = {
           collapsable: false,
           children: [
             ['others/切换镜像源', '切换镜像源'],
-            ['others/Cmder右键启动', 'Cmder右键启动']
+            ['others/Cmder右键启动', 'Cmder右键启动'],
+            ['others/Flat-UI色表', 'Flat-UI色表'],
           ]
         }
-      ],
-      '/pages/book/': [
-        {
-          title: 'JS高级程序设计',   // 一级菜单名称
-          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
-          children: [
-            ['js-programme/01-JavaScript简介', '01-JavaScript简介'],
-            ['js-programme/02-在HTML中使用JavaScript', '02-在HTML中使用JavaScript']
-          ]
-        },
       ]
       //...可添加多个不同的侧边栏，不同页面会根据路径显示不同的侧边栏
     }
