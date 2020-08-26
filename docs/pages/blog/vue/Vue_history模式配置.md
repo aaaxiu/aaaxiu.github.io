@@ -1,6 +1,4 @@
 # Vue_history模式配置
-<br >
-
 
 ### 后台配置
 后端使用的iis [官网教程](https://router.vuejs.org/zh/guide/essentials/history-mode.html)

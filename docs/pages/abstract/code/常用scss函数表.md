@@ -1,5 +1,4 @@
 # 常用scss函数表
-<br/>
 
 新开一个项目就要去找mixin.scss实在麻烦, 主要根据bailicangdu的开源项目vue-elm中的mixin.scss改编而来, 添加了几个自己在项目中用得比较多的变量, 潦作记录
 

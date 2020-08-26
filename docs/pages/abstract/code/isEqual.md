@@ -1,12 +1,4 @@
-<!--
- * @Description: isEqual
- * @Author: 林河
- * @Date: 2020-06-01 16:47:03
- * @LastEditTime: 2020-06-01 16:50:38
- * @LastEditors: 林河
---> 
 # isEqual
-<br />
 
 > 比较两个值是否完全相等，主要比较复杂数据类型引用不同，而键值完全一样的情况。
 

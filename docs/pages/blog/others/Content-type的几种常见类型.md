@@ -1,5 +1,4 @@
 # Content-type的几种常见类型
-<br />
 
 > 转自：[Content-type的几种常见类型](https://www.jianshu.com/p/ba40da728806)
 

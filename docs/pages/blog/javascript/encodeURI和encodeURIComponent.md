@@ -1,5 +1,4 @@
 # encodeURI和encodeURIComponent
-<br >
 
 > 首先说一下URI和URL的区别，其中的I指的是Indentifier，L指的是Locater。前者是统一资源标识符，后者则是统一资源定位符。解释得通俗一点URI相当于一个人的身份证号，我可以标识出一个唯一的人，而URL则相当于这个人的详细地址，同样可以标识出一个唯一的人，但是URL是URI的一种实现，它是URI的子集。**URL就是用定位的方式实现的URI**。
 

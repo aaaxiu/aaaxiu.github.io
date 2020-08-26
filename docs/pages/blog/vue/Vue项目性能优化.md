@@ -1,5 +1,4 @@
 # Vue项目性能优化
-<br >
 
 > 本文转载自[我是你的超级英雄.掘金](https://juejin.im/post/5d548b83f265da03ab42471d#heading-2)，作者主要从3个方面提出了优化方案：Vue代码层面的优化；webpack配置层面的优化；web技术层面的优化。
 
