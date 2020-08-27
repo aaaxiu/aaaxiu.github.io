@@ -3,7 +3,8 @@
 // 全站变灰(哀悼日)
 html, body
   font-size 14px
-
+  .sidebar 
+    font-size 14px
 //   filter grayscale(100%)
 //   -webkit-filter grayscale(100%)
 //   -moz-filter grayscale(100%)
@@ -16,7 +17,7 @@ html, body
     /* 渐变色标题 */
     .site-name {
       background-image: -webkit-linear-gradient(left,
-      #3498db, #9b59b6 25%, #3498db 50%, #9b59b6 75%, #3498db);
+      #1abc9c, #ecf0f1 25%, #1abc9c 50%, #ecf0f1 75%, #1abc9c);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       -webkit-background-size: 200% 100%;
@@ -32,7 +33,7 @@ html, body
   // .sidebar-mask {}
   // 侧边栏
   .sidebar {
-    font-size 14px
+    
     /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
     &::-webkit-scrollbar {
       width: 8px;
@@ -62,7 +63,7 @@ html, body
     }
     .custom-block {
       &.tip {
-        border-color: #3498db;
+        border-color: #1abc9c;
       }
       &.warning {
         border-color: #f1c40f;
