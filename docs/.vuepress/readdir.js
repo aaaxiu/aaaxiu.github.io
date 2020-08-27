@@ -54,11 +54,9 @@ const blogArr = [
   { title: 'Git', folder: 'git' },
   { title: 'Others', folder: 'others' },
 ]
-
 const bookArr = [
   { title: 'JS高级程序设计', folder: 'js-programme' }
 ]
-
 const abstractArr = [
   { title: '代码摘要', folder: 'code' },
   { title: '其他', folder: 'others' }

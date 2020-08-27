@@ -14,11 +14,12 @@
 
 > 所有的页面都在 docs/pages/ 下面，根据 tabs 区分不同的文件夹
 
-1. 首先在对应 tabs 下创建 markdown 文件，如 blog/javascript 下的“前端实现图片压缩上传.md”
+~~1. 首先在对应 tabs 下创建 markdown 文件，如 blog/javascript 下的“前端实现图片压缩上传.md”~~
 
-2. docs/.vuepress 是 vuepress 配置相关的文件夹，打开 docs/.vuepress/config.js 。在 `themeConfig.sidebar` 下添加配置。
+~~2. docs/.vuepress 是 vuepress 配置相关的文件夹，打开 docs/.vuepress/config.js 。在 `themeConfig.sidebar` 下添加配置。~~
 
   ``` js
+  // !! 配置已修改，以下示例作废
   export default = {
     themeConfig: {
       // ...
@@ -37,6 +38,8 @@
     }
   }
 ```
+
+**现在不需要这么做了，只需要符合 `pages/xxx/xxx/xxx.md` 这样的目录结构，直接创建 markdown 文件就能被加载在侧边栏和对应首页目录（指的是 `pages/xxx/README.md` 文件 ）中。它的原理是使用 `fs.readdirSync` 和 `require.context(...)` 等 API （详细配置可查看 .vuepress/readdir.js 和 pages/blog/README.md）。**
 
 ### 常用功能
 

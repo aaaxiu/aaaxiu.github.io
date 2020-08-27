@@ -41,7 +41,7 @@ module.exports = {
       { text: 'Home', link: '/'},
       { text: '博文', link: '/pages/blog/' }, // 内部链接 以docs为根目录
       { text: '摘要', link: '/pages/abstract/'},
-      { text: '读书', link: '/pages/book/' },
+      // { text: '读书', link: '/pages/book/' },
       { text: 'GitHub', link: 'https://github.com/imlinhe'}  
     ],
     sidebar: {
