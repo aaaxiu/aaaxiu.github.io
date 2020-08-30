@@ -2,7 +2,7 @@
 home: true
 heroImage: /linhe.jpg
 actionText: Get Started →
-actionLink: /pages/blog/javascript/webpack配置指南.md
+actionLink: /pages/blog/
 features:
 - title: 博文
   details: 学习谨记三条：找准知识体系、刻意练习、及时反馈
