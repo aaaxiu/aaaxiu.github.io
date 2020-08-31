@@ -1,6 +1,6 @@
 # 林河前端之路
 
-[项目地址](https://imlinhe.com)
+项目地址 [https://imlinhe.com](https://imlinhe.com)
 
 ### 项目启动和打包方式
 
@@ -39,7 +39,7 @@
   }
 ```
 
-**现在不需要这么做了，只需要符合 `pages/xxx/xxx/xxx.md` 这样的目录结构，直接创建 markdown 文件就能被加载在侧边栏和对应首页目录（指的是 `pages/xxx/README.md` 文件 ）中。它的原理是使用 `fs.readdirSync` 和 `require.context(...)` 等 API （详细配置可查看 .vuepress/readdir.js 和 pages/blog/README.md）。**
+**现在不需要这么做了，只需要符合 `pages/xxx/xxx/xxx.md` 这样的目录结构，直接创建 markdown 文件就能被加载在侧边栏和对应首页目录（指的是 `pages/xxx/README.md` 文件 ）中。它的原理是使用 `fs.readdirSync` 和 `require.context(...)` 等 API （详细配置可查看 [.vuepress/readdir.js](https://github.com/imlinhe/imlinhe.github.io/blob/source_code/docs/.vuepress/readdir.js) 和 [pages/blog/README.md](https://github.com/imlinhe/imlinhe.github.io/blob/source_code/docs/pages/blog/README.md)）。**
 
 ### 常用功能
 
