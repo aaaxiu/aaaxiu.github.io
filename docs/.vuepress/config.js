@@ -1,4 +1,4 @@
-const {blogSideBar, bookSideBar, abstractSideBar} = require('./readdir')
+const {blogSideBar, abstractSideBar} = require('./readdir')
 
 module.exports = {
   title: '林河前端之路',
@@ -41,12 +41,10 @@ module.exports = {
       { text: 'Home', link: '/'},
       { text: '博文', link: '/pages/blog/' }, // 内部链接 以docs为根目录
       { text: '摘要', link: '/pages/abstract/'},
-      // { text: '读书', link: '/pages/book/' },
       { text: 'GitHub', link: 'https://github.com/imlinhe'}  
     ],
     sidebar: {
       '/pages/blog/': blogSideBar,
-      '/pages/book/': bookSideBar,
       '/pages/abstract/': abstractSideBar
       //...可添加多个不同的侧边栏，不同页面会根据路径显示不同的侧边栏
     }

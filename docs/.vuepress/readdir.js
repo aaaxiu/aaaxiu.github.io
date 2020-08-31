@@ -35,7 +35,6 @@ function curry(fn, args) {
 
 const readAbstract = curry(fslist)(path.resolve(__dirname, '../pages/abstract'))
 const readBlog = curry(fslist)(path.resolve(__dirname, '../pages/blog'))
-const readBook = curry(fslist)(path.resolve(__dirname, '../pages/book'))
 
 function sideBarFunc(arr, fn) {
   return arr.map((item) => {
@@ -54,20 +53,15 @@ const blogArr = [
   { title: 'Git', folder: 'git' },
   { title: 'Others', folder: 'others' },
 ]
-const bookArr = [
-  { title: 'JS高级程序设计', folder: 'js-programme' }
-]
 const abstractArr = [
   { title: '代码摘要', folder: 'code' },
   { title: '其他', folder: 'others' }
 ]
 
 const blogSideBar = sideBarFunc(blogArr, readBlog)
-const bookSideBar = sideBarFunc(bookArr, readBook)
 const abstractSideBar = sideBarFunc(abstractArr, readAbstract)
 
 module.exports = {
   blogSideBar,
-  bookSideBar,
   abstractSideBar
 }
