@@ -1,5 +1,9 @@
 # VSCode 插件和配置
 
+::: danger
+**从 Visual Studio Code 1.48开始可以授权微软或 Github 登录，并且同步用户设置了，包括 Setting.json 文件、扩展程序等。因此，下面的配置不再是必须的！！！**
+:::
+
 > vscode 是一款非常好的编辑器, 它的好很大一部分取决于丰富的插件库, 由于安装的插件比较多, 配置也比较多(个人喜欢瞎弄), 这里做一个插件和配置的备份, 纯粹个人配置, 做个参考
 
 ### 插件
@@ -7,6 +11,8 @@
 - **Auto Close Tag**
 
   自动闭合 HTML 标签
+
+- **Auto Rename Tag**
 
 - **Better Comments**
 
@@ -32,6 +38,8 @@
 
   提高代码可读性、统一性，适合协作开发
 
+- **Git History**
+
 - **GitLens — Git supercharged**
 
   增强 Visual Studio 代码内置的 Git 功能
@@ -40,9 +48,9 @@
 
   支持 stylus 高亮
 
-- **Markdown Preview Enhanced**
+- **LeetCode**
 
-  Markdown 预览
+- **Material Icon Theme**
 
 - **npm**
 
@@ -72,9 +80,7 @@
 
   vue 工具
 
-- **vscode-icons**
-
-  icon 插件
+- **vscode-pdf**
 
 - **Vue 2 Snippets**
 
@@ -90,18 +96,17 @@
 {
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+  "editor.fontLigatures": true,
   "editor.lineHeight": 26,
-  "editor.fontFamily": "Monaco",
+  "editor.fontFamily": "Monaco, Consolas",
   "editor.letterSpacing": 0.5,
-  "editor.fontSize": 15,
+  "editor.fontSize": 16,
   "editor.minimap.renderCharacters": false,
   "files.insertFinalNewline": true,
   "workbench.settings.editor": "json",
-  "workbench.iconTheme": "vscode-icons",
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "workbench.colorTheme": "Panda Syntax",
-  "diffEditor.renderSideBySide": false, // 控制差异编辑器的显示方式是并排还是内联
-  "gitlens.views.repositories.files.layout": "tree", // git 树状显示
+  "breadcrumbs.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe", // git 树状显示
   "code-runner.runInTerminal": true, // 在命令行运行code runner
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -116,8 +121,20 @@
   ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Panda Syntax",
+  "leetcode.endpoint": "leetcode-cn",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.workspaceFolder": "d:\\linhe\\leetCode",
+  "leetcode.defaultLanguage": "javascript",
+  "leetcode.hint.commentDescription": false,
+  "gitlens.views.repositories.files.layout": "tree",
+  "leetcode.hint.commandShortcut": false
 }
+
 ```
 
 ### 主题
