@@ -1,12 +1,12 @@
-# Git常用命令
+# 最常用的Git命令汇总
 
 ![](../images/5.png)
 
 名词解释: 
-- **Workspace(工作区)**; 
-- **Index/Stage(暂存区)**;
-- **Repository(仓库区)**; 
-- **Remote(远程仓库)**。
+- **Workspace(工作区)**
+- **Index/Stage(暂存区)**
+- **Repository(仓库区)**
+- **Remote(远程仓库)**
 
 ### 1. 增加/删除文件
 
@@ -33,15 +33,12 @@ $ git rm --cached [file]
 
 ### 2. 代码提交
 
-``` shell {1,2,7,8,13,14,15}
+``` shell {1,2,10,11,12}
 # 提交暂存区到仓库区
 $ git commit -m [message]
 
 # 提交暂存区的指定文件到仓库区
 $ git commit [file1] [file2] ... -m [message]
-
-# 提交工作区自上次commit之后的变化，直接到仓库区
-$ git commit -a
 
 # 提交时显示所有diff信息
 $ git commit -v
