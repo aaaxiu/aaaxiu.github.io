@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浮点数运算误差 | 林河前端之路</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/linhe.jpg">
+    <meta name="description" content="前端笔记整理">
+    <link rel="preload" href="/assets/css/0.styles.b8b84755.css" as="style"><link rel="preload" href="/assets/js/app.8787cb07.js" as="script"><link rel="preload" href="/assets/js/11.28970a88.js" as="script"><link rel="prefetch" href="/assets/js/1.b2afddb8.js"><link rel="prefetch" href="/assets/js/10.d94ccaf1.js"><link rel="prefetch" href="/assets/js/12.35282547.js"><link rel="prefetch" href="/assets/js/13.dabefeda.js"><link rel="prefetch" href="/assets/js/14.1e87bf55.js"><link rel="prefetch" href="/assets/js/15.f028496b.js"><link rel="prefetch" href="/assets/js/16.f2bd1013.js"><link rel="prefetch" href="/assets/js/17.61fce331.js"><link rel="prefetch" href="/assets/js/18.c0151592.js"><link rel="prefetch" href="/assets/js/19.649ccae9.js"><link rel="prefetch" href="/assets/js/2.ed4d5ea4.js"><link rel="prefetch" href="/assets/js/20.505ae397.js"><link rel="prefetch" href="/assets/js/21.f7e72c2c.js"><link rel="prefetch" href="/assets/js/22.1aac6661.js"><link rel="prefetch" href="/assets/js/23.279bdc57.js"><link rel="prefetch" href="/assets/js/24.b4d89676.js"><link rel="prefetch" href="/assets/js/25.4eba77da.js"><link rel="prefetch" href="/assets/js/26.b0727d16.js"><link rel="prefetch" href="/assets/js/27.5951fa0f.js"><link rel="prefetch" href="/assets/js/28.5a895926.js"><link rel="prefetch" href="/assets/js/29.116dbe1c.js"><link rel="prefetch" href="/assets/js/3.296bb4de.js"><link rel="prefetch" href="/assets/js/30.5aa38bd2.js"><link rel="prefetch" href="/assets/js/31.6c0fbe8b.js"><link rel="prefetch" href="/assets/js/32.b6044444.js"><link rel="prefetch" href="/assets/js/33.df0192dc.js"><link rel="prefetch" href="/assets/js/34.efcde496.js"><link rel="prefetch" href="/assets/js/35.c39eb115.js"><link rel="prefetch" href="/assets/js/36.7ae17cc5.js"><link rel="prefetch" href="/assets/js/37.5f234fcc.js"><link rel="prefetch" href="/assets/js/38.23dd4818.js"><link rel="prefetch" href="/assets/js/39.e1bb55e4.js"><link rel="prefetch" href="/assets/js/4.a27ba892.js"><link rel="prefetch" href="/assets/js/40.b71fcc23.js"><link rel="prefetch" href="/assets/js/41.b2a56742.js"><link rel="prefetch" href="/assets/js/42.7a9d027b.js"><link rel="prefetch" href="/assets/js/43.3d0c2e9a.js"><link rel="prefetch" href="/assets/js/44.42af3002.js"><link rel="prefetch" href="/assets/js/45.4bed9643.js"><link rel="prefetch" href="/assets/js/46.13a9b170.js"><link rel="prefetch" href="/assets/js/47.ca5d59f7.js"><link rel="prefetch" href="/assets/js/48.b9567480.js"><link rel="prefetch" href="/assets/js/49.053b439a.js"><link rel="prefetch" href="/assets/js/5.c1cf8d80.js"><link rel="prefetch" href="/assets/js/50.344fa5cd.js"><link rel="prefetch" href="/assets/js/51.3a7e5ca4.js"><link rel="prefetch" href="/assets/js/52.933ace7b.js"><link rel="prefetch" href="/assets/js/6.6bf8bef8.js"><link rel="prefetch" href="/assets/js/7.2dea1104.js"><link rel="prefetch" href="/assets/js/8.5f73afeb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b8b84755.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/linhe.jpg" alt="林河前端之路" class="logo"> <span class="site-name can-hide">林河前端之路</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/pages/blog/" class="nav-link">
+  博文
+</a></div><div class="nav-item"><a href="/pages/abstract/" class="nav-link router-link-active">
+  摘要
+</a></div><div class="nav-item"><a href="https://github.com/imlinhe" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/pages/blog/" class="nav-link">
+  博文
+</a></div><div class="nav-item"><a href="/pages/abstract/" class="nav-link router-link-active">
+  摘要
+</a></div><div class="nav-item"><a href="https://github.com/imlinhe" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>代码摘要</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/abstract/code/Canvas签名.html" class="sidebar-link">Canvas签名</a></li><li><a href="/pages/abstract/code/ESLint配置项.html" class="sidebar-link">ESLint配置项</a></li><li><a href="/pages/abstract/code/isEqual.html" class="sidebar-link">isEqual</a></li><li><a href="/pages/abstract/code/一行代码实现时间戳转时分秒.html" class="sidebar-link">一行代码实现时间戳转时分秒</a></li><li><a href="/pages/abstract/code/公共方法汇总.html" class="sidebar-link">公共方法汇总</a></li><li><a href="/pages/abstract/code/常用公共样式.html" class="sidebar-link">常用公共样式</a></li><li><a href="/pages/abstract/code/椭圆运动轨迹.html" class="sidebar-link">椭圆运动轨迹</a></li><li><a href="/pages/abstract/code/求多个数组的交集.html" class="sidebar-link">求多个数组的交集</a></li><li><a href="/pages/abstract/code/浮点数运算误差.html" class="active sidebar-link">浮点数运算误差</a></li><li><a href="/pages/abstract/code/电话号码分段.html" class="sidebar-link">电话号码分段</a></li><li><a href="/pages/abstract/code/饿了么Dialog组件二次封装.html" class="sidebar-link">饿了么Dialog组件二次封装</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/abstract/others/Cmder右键启动.html" class="sidebar-link">Cmder右键启动</a></li><li><a href="/pages/abstract/others/切换镜像源.html" class="sidebar-link">切换镜像源</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="浮点数运算误差"><a href="#浮点数运算误差" class="header-anchor">#</a> 浮点数运算误差</h1> <p>这是一个解决浮点数的库源码，因为代码比较简洁，所以直接复制过来了，没有重新去安装包。</p> <p>utils.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @desc 解决浮动运算问题，避免小数点后产生多位数和计算精度损失。
+ * 问题示例：2.3 + 2.4 = 4.699999999999999，1.0 - 0.9 = 0.09999999999999998
+ */</span>
+
+<span class="token comment">/**
+ * 把错误的数据转正
+ * strip(0.09999999999999998)=0.1
+ */</span>
+<span class="token keyword">function</span> <span class="token function">strip</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> precision <span class="token operator">=</span> <span class="token number">12</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">+</span><span class="token function">parseFloat</span><span class="token punctuation">(</span>num<span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span>precision<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+  
+<span class="token comment">/**
+ * Return digits length of a number
+ * @param {*number} num Input number
+ */</span>
+<span class="token keyword">function</span> <span class="token function">digitLength</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Get digit length of e</span>
+  <span class="token keyword">const</span> eSplit <span class="token operator">=</span> num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token regex">/[eE]/</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> len <span class="token operator">=</span> <span class="token punctuation">(</span>eSplit<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">(</span>eSplit<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> len <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> len <span class="token operator">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 把小数转成整数，支持科学计数法。如果是小数则放大成整数
+ * @param {*number} num 输入数
+ */</span>
+<span class="token keyword">function</span> <span class="token function">float2Fixed</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'e'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Number</span><span class="token punctuation">(</span>num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> dLen <span class="token operator">=</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dLen <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token function">strip</span><span class="token punctuation">(</span>num <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> dLen<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> num
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 检测数字是否越界，如果越界给出提示
+ * @param {*number} num 输入数
+ */</span>
+<span class="token keyword">function</span> <span class="token function">checkBoundary</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>_boundaryCheckingState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&gt;</span> Number<span class="token punctuation">.</span><span class="token constant">MAX_SAFE_INTEGER</span> <span class="token operator">||</span> num <span class="token operator">&lt;</span> Number<span class="token punctuation">.</span><span class="token constant">MIN_SAFE_INTEGER</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>num<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is beyond boundary when transfer to integer, the results may not be accurate</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 精确乘法
+ */</span>
+<span class="token keyword">function</span> <span class="token function">times</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> <span class="token operator">...</span>others</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>others<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">times</span><span class="token punctuation">(</span><span class="token function">times</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">,</span> others<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">...</span>others<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> num1Changed <span class="token operator">=</span> <span class="token function">float2Fixed</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> num2Changed <span class="token operator">=</span> <span class="token function">float2Fixed</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> baseNum <span class="token operator">=</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> leftValue <span class="token operator">=</span> num1Changed <span class="token operator">*</span> num2Changed
+
+  <span class="token function">checkBoundary</span><span class="token punctuation">(</span>leftValue<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> leftValue <span class="token operator">/</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> baseNum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 精确加法
+ */</span>
+<span class="token keyword">function</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> <span class="token operator">...</span>others</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>others<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token function">plus</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">,</span> others<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">...</span>others<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> baseNum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">digitLength</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">times</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> baseNum<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">times</span><span class="token punctuation">(</span>num2<span class="token punctuation">,</span> baseNum<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> baseNum
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 精确减法
+ */</span>
+<span class="token keyword">function</span> <span class="token function">minus</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> <span class="token operator">...</span>others</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>others<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">minus</span><span class="token punctuation">(</span><span class="token function">minus</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">,</span> others<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">...</span>others<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> baseNum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">digitLength</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">times</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> baseNum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">times</span><span class="token punctuation">(</span>num2<span class="token punctuation">,</span> baseNum<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> baseNum
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 精确除法
+ */</span>
+<span class="token keyword">function</span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> <span class="token operator">...</span>others</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>others<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token function">divide</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">,</span> others<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">...</span>others<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> num1Changed <span class="token operator">=</span> <span class="token function">float2Fixed</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> num2Changed <span class="token operator">=</span> <span class="token function">float2Fixed</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+  <span class="token function">checkBoundary</span><span class="token punctuation">(</span>num1Changed<span class="token punctuation">)</span>
+  <span class="token function">checkBoundary</span><span class="token punctuation">(</span>num2Changed<span class="token punctuation">)</span>
+  <span class="token comment">// fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正</span>
+  <span class="token keyword">return</span> <span class="token function">times</span><span class="token punctuation">(</span><span class="token punctuation">(</span>num1Changed <span class="token operator">/</span> num2Changed<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">strip</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">digitLength</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 四舍五入
+ */</span>
+<span class="token keyword">function</span> <span class="token function">round</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> ratio</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> base <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> ratio<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">divide</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token function">times</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> base<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> base<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> _boundaryCheckingState <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment">/**
+ * 是否进行边界检查，默认开启
+ * @param flag 标记开关，true 为开启，false 为关闭，默认为 true
+ */</span>
+<span class="token keyword">function</span> <span class="token function">enableBoundaryChecking</span><span class="token punctuation">(</span><span class="token parameter">flag <span class="token operator">=</span> <span class="token boolean">true</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  _boundaryCheckingState <span class="token operator">=</span> flag
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> strip<span class="token punctuation">,</span> plus<span class="token punctuation">,</span> minus<span class="token punctuation">,</span> times<span class="token punctuation">,</span> divide<span class="token punctuation">,</span> round<span class="token punctuation">,</span> digitLength<span class="token punctuation">,</span> float2Fixed<span class="token punctuation">,</span> enableBoundaryChecking <span class="token punctuation">}</span>
+</code></pre></div><!----></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/abstract/code/求多个数组的交集.html" class="prev">
+        求多个数组的交集
+      </a></span> <span class="next"><a href="/pages/abstract/code/电话号码分段.html">
+        电话号码分段
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8787cb07.js" defer></script><script src="/assets/js/11.28970a88.js" defer></script>
+  </body>
+</html>

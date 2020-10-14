@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>饿了么Dialog组件二次封装 | 林河前端之路</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/linhe.jpg">
+    <meta name="description" content="前端笔记整理">
+    <link rel="preload" href="/assets/css/0.styles.b8b84755.css" as="style"><link rel="preload" href="/assets/js/app.8787cb07.js" as="script"><link rel="preload" href="/assets/js/11.28970a88.js" as="script"><link rel="prefetch" href="/assets/js/1.b2afddb8.js"><link rel="prefetch" href="/assets/js/10.d94ccaf1.js"><link rel="prefetch" href="/assets/js/12.35282547.js"><link rel="prefetch" href="/assets/js/13.dabefeda.js"><link rel="prefetch" href="/assets/js/14.1e87bf55.js"><link rel="prefetch" href="/assets/js/15.f028496b.js"><link rel="prefetch" href="/assets/js/16.f2bd1013.js"><link rel="prefetch" href="/assets/js/17.61fce331.js"><link rel="prefetch" href="/assets/js/18.c0151592.js"><link rel="prefetch" href="/assets/js/19.649ccae9.js"><link rel="prefetch" href="/assets/js/2.ed4d5ea4.js"><link rel="prefetch" href="/assets/js/20.505ae397.js"><link rel="prefetch" href="/assets/js/21.f7e72c2c.js"><link rel="prefetch" href="/assets/js/22.1aac6661.js"><link rel="prefetch" href="/assets/js/23.279bdc57.js"><link rel="prefetch" href="/assets/js/24.b4d89676.js"><link rel="prefetch" href="/assets/js/25.4eba77da.js"><link rel="prefetch" href="/assets/js/26.b0727d16.js"><link rel="prefetch" href="/assets/js/27.5951fa0f.js"><link rel="prefetch" href="/assets/js/28.5a895926.js"><link rel="prefetch" href="/assets/js/29.116dbe1c.js"><link rel="prefetch" href="/assets/js/3.296bb4de.js"><link rel="prefetch" href="/assets/js/30.5aa38bd2.js"><link rel="prefetch" href="/assets/js/31.6c0fbe8b.js"><link rel="prefetch" href="/assets/js/32.b6044444.js"><link rel="prefetch" href="/assets/js/33.df0192dc.js"><link rel="prefetch" href="/assets/js/34.efcde496.js"><link rel="prefetch" href="/assets/js/35.c39eb115.js"><link rel="prefetch" href="/assets/js/36.7ae17cc5.js"><link rel="prefetch" href="/assets/js/37.5f234fcc.js"><link rel="prefetch" href="/assets/js/38.23dd4818.js"><link rel="prefetch" href="/assets/js/39.e1bb55e4.js"><link rel="prefetch" href="/assets/js/4.a27ba892.js"><link rel="prefetch" href="/assets/js/40.b71fcc23.js"><link rel="prefetch" href="/assets/js/41.b2a56742.js"><link rel="prefetch" href="/assets/js/42.7a9d027b.js"><link rel="prefetch" href="/assets/js/43.3d0c2e9a.js"><link rel="prefetch" href="/assets/js/44.42af3002.js"><link rel="prefetch" href="/assets/js/45.4bed9643.js"><link rel="prefetch" href="/assets/js/46.13a9b170.js"><link rel="prefetch" href="/assets/js/47.ca5d59f7.js"><link rel="prefetch" href="/assets/js/48.b9567480.js"><link rel="prefetch" href="/assets/js/49.053b439a.js"><link rel="prefetch" href="/assets/js/5.c1cf8d80.js"><link rel="prefetch" href="/assets/js/50.344fa5cd.js"><link rel="prefetch" href="/assets/js/51.3a7e5ca4.js"><link rel="prefetch" href="/assets/js/52.933ace7b.js"><link rel="prefetch" href="/assets/js/6.6bf8bef8.js"><link rel="prefetch" href="/assets/js/7.2dea1104.js"><link rel="prefetch" href="/assets/js/8.5f73afeb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b8b84755.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/linhe.jpg" alt="林河前端之路" class="logo"> <span class="site-name can-hide">林河前端之路</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/pages/blog/" class="nav-link">
+  博文
+</a></div><div class="nav-item"><a href="/pages/abstract/" class="nav-link router-link-active">
+  摘要
+</a></div><div class="nav-item"><a href="https://github.com/imlinhe" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/pages/blog/" class="nav-link">
+  博文
+</a></div><div class="nav-item"><a href="/pages/abstract/" class="nav-link router-link-active">
+  摘要
+</a></div><div class="nav-item"><a href="https://github.com/imlinhe" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>代码摘要</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/abstract/code/Canvas签名.html" class="sidebar-link">Canvas签名</a></li><li><a href="/pages/abstract/code/ESLint配置项.html" class="sidebar-link">ESLint配置项</a></li><li><a href="/pages/abstract/code/isEqual.html" class="sidebar-link">isEqual</a></li><li><a href="/pages/abstract/code/一行代码实现时间戳转时分秒.html" class="sidebar-link">一行代码实现时间戳转时分秒</a></li><li><a href="/pages/abstract/code/公共方法汇总.html" class="sidebar-link">公共方法汇总</a></li><li><a href="/pages/abstract/code/常用公共样式.html" class="sidebar-link">常用公共样式</a></li><li><a href="/pages/abstract/code/椭圆运动轨迹.html" class="sidebar-link">椭圆运动轨迹</a></li><li><a href="/pages/abstract/code/求多个数组的交集.html" class="sidebar-link">求多个数组的交集</a></li><li><a href="/pages/abstract/code/浮点数运算误差.html" class="sidebar-link">浮点数运算误差</a></li><li><a href="/pages/abstract/code/电话号码分段.html" class="sidebar-link">电话号码分段</a></li><li><a href="/pages/abstract/code/饿了么Dialog组件二次封装.html" class="active sidebar-link">饿了么Dialog组件二次封装</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/abstract/others/Cmder右键启动.html" class="sidebar-link">Cmder右键启动</a></li><li><a href="/pages/abstract/others/切换镜像源.html" class="sidebar-link">切换镜像源</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="饿了么dialog组件二次封装"><a href="#饿了么dialog组件二次封装" class="header-anchor">#</a> 饿了么Dialog组件二次封装</h1> <p>feature：支持拖动，可在组件上使用饿了么的属性和事件</p> <p>使用方式：</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>handleOpen<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>点击打开 Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lin-dialog</span> 
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>visibleDialog<span class="token punctuation">&quot;</span></span> 
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>测试弹框<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@confirm</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$_handleConfirm<span class="token punctuation">&quot;</span></span> 
+      <span class="token attr-name">@cancel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$_handleCancel<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      这是一段内容
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lin-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      visibleDialog<span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">$_handleConfirm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">$_handleCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>visibleDialog <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>封装：</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-dialog</span> 
+    <span class="token attr-name">v-drag</span>
+    <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>visibleDialog<span class="token punctuation">&quot;</span></span> 
+    <span class="token attr-name">v-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$attrs<span class="token punctuation">&quot;</span></span> 
+    <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dialog__wrapper<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">v-on</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$listeners<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--内容区域的默认插槽--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--使用弹框的footer插槽添加按钮--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#footer</span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment">&lt;!--对外继续暴露footer插槽，有个别弹框按钮需要自定义--&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--将取消与确定按钮集成到内部--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>handleCancel<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>handleConfirm<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            确 定
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-dialog</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  inheritAttrs<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    visible<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> Boolean<span class="token punctuation">,</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    visibleDialog<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>visible<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">&quot;update:visible&quot;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  directives<span class="token operator">:</span> <span class="token punctuation">{</span>
+    drag<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">bind</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> dialogHeaderEl <span class="token operator">=</span> el<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.el-dialog__header'</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> dragDom <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>dialog__wrapper
+        dialogHeaderEl<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cursor <span class="token operator">=</span> <span class="token string">'move'</span>
+        <span class="token comment">// 获取原有属性 ie dom元素.currentStyle 火狐谷歌 window.getComputedStyle(dom元素, null);</span>
+        <span class="token keyword">const</span> sty <span class="token operator">=</span> dragDom<span class="token punctuation">.</span>currentStyle <span class="token operator">||</span> window<span class="token punctuation">.</span><span class="token function">getComputedStyle</span><span class="token punctuation">(</span>dragDom<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+        dialogHeaderEl<span class="token punctuation">.</span><span class="token function-variable function">onmousedown</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 鼠标按下，计算当前元素距离可视区的距离</span>
+          <span class="token keyword">const</span> disX <span class="token operator">=</span> e<span class="token punctuation">.</span>clientX <span class="token operator">-</span> dialogHeaderEl<span class="token punctuation">.</span>offsetLeft
+          <span class="token keyword">const</span> disY <span class="token operator">=</span> e<span class="token punctuation">.</span>clientY <span class="token operator">-</span> dialogHeaderEl<span class="token punctuation">.</span>offsetTop
+          <span class="token comment">// 获取到的值带px 正则匹配替换</span>
+          <span class="token keyword">let</span> styL<span class="token punctuation">,</span> styT
+          <span class="token comment">// 注意在ie中 第一次获取到的值为组件自带50% 移动之后赋值为px</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>sty<span class="token punctuation">.</span>left<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'%'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            styL <span class="token operator">=</span> <span class="token operator">+</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientWidth <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token operator">+</span>sty<span class="token punctuation">.</span>left<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\%/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span>
+            styT <span class="token operator">=</span> <span class="token operator">+</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientHeight <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token operator">+</span>sty<span class="token punctuation">.</span>top<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\%/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            styL <span class="token operator">=</span> <span class="token operator">+</span>sty<span class="token punctuation">.</span>left<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\px/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+            styT <span class="token operator">=</span> <span class="token operator">+</span>sty<span class="token punctuation">.</span>top<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\px/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+          document<span class="token punctuation">.</span><span class="token function-variable function">onmousemove</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 通过事件委托，计算移动的距离 </span>
+            <span class="token keyword">const</span> l <span class="token operator">=</span> e<span class="token punctuation">.</span>clientX <span class="token operator">-</span> disX
+            <span class="token keyword">const</span> t <span class="token operator">=</span> e<span class="token punctuation">.</span>clientY <span class="token operator">-</span> disY
+            <span class="token comment">// 移动当前元素  </span>
+            dragDom<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>l <span class="token operator">+</span> styL<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span>
+            dragDom<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>t <span class="token operator">+</span> styT<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span>
+            <span class="token comment">//将此时的位置传出去</span>
+            <span class="token comment">//binding.value({x:e.pageX,y:e.pageY})</span>
+          <span class="token punctuation">}</span>
+          document<span class="token punctuation">.</span><span class="token function-variable function">onmouseup</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            document<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> <span class="token keyword">null</span>
+            document<span class="token punctuation">.</span>onmouseup <span class="token operator">=</span> <span class="token keyword">null</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">handleCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">&quot;cancel&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleConfirm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">&quot;confirm&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><!----></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/abstract/code/电话号码分段.html" class="prev">
+        电话号码分段
+      </a></span> <span class="next"><a href="/pages/abstract/others/Cmder右键启动.html">
+        Cmder右键启动
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8787cb07.js" defer></script><script src="/assets/js/11.28970a88.js" defer></script>
+  </body>
+</html>
