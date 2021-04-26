@@ -192,6 +192,9 @@ $ git status
 # 显示当前分支的版本历史
 $ git log
 
+# 显示精简的版本信息
+$ git log --oneline
+
 # 显示commit历史，以及每次commit发生变更的文件
 $ git log --stat
 
