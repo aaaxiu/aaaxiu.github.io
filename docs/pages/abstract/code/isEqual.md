@@ -18,7 +18,7 @@ function isEqual(obj1, obj2) {
     for(let prop in obj1) {
       if (obj2.hasOwnProperty(prop)) {
         // 递归
-        if (!deepEqual(obj1[prop], obj2[prop])) {
+        if (!isEqual(obj1[prop], obj2[prop])) {
           return false
         }
       } else {
